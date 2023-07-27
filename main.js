@@ -1,2 +1,1 @@
-console.log('12121212');
-alert("goood job")
+const a = 12;
