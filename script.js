@@ -1,14 +1,17 @@
-const lines = 5;
-let result = '';
-
-for (let i = 0; i <= lines; i++) {
-    for (let j = 0; j < lines - i; j++) {
-        result += " ";
+function getMathResult(num, multiple) {
+    let result = "";
+    for(let i = 1; i <= multiple; i++){
+        if(i == multiple ){
+            result += `${i * num}`
+        }else if(typeof(multiple)!== "number" || multiple <=0){
+            result = num
+            break
+        }
+        else{
+            result += `${i * num}--`
+        }
     }
-    for (let j = 0; j < 2 * i + 1; j++) {
-        result += "*";
-    }
-    result += "\n";
+    return result;
 }
 
-console.log(result)
+console.log(getMathResult(4,"5"))
