@@ -1,17 +1,36 @@
-function getMathResult(num, multiple) {
-    let result = "";
-    for(let i = 1; i <= multiple; i++){
-        if(i == multiple ){
-            result += `${i * num}`
-        }else if(typeof(multiple)!== "number" || multiple <=0){
-            result = num
-            break
-        }
-        else{
-            result += `${i * num}--`
-        }
+// function fib(num) {
+//    let first = 0;
+//    let second = 1;
+//    let result;
+
+//    for(let i = 2; i < num.length; i++){
+//         let 
+//    }
+// }
+
+function fib(num) {
+    if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+        return "";
     }
+
+    let result = '';
+    let first = 0;
+    let second = 1;
+
+    for (let i = 0; i < num; i++) {
+        if (i + 1 === num) {
+            result += `${first}`;
+            // Без пробела в конце
+        } else {
+            result += `${first} `;
+        }
+
+        let third = first + second;
+        first = second;
+        second = third;
+    }
+
     return result;
 }
 
-console.log(getMathResult(4,"5"))
+console.log(fib(77));
